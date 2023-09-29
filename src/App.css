@@ -1,38 +1,508 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
+.homeContainer {
+  background-image: url(Images/fashion.jpg);
+  height:100vh;
+  background-size: cover;
+  margin-left: -10%;
+}
+
+.homeContainer h1 {
+  color: rgb(255, 255, 255);
+  padding-top: 10%;
+  font-size: 150px;
+  margin-left: 55%;
+  font-family: 'Imperial';
+  font-weight: 700;
+  text-shadow: 12px 2px 5px rgba(0, 0, 0, 0.5);
+}
+.homeContainer button {
+  background-color: black;
+  color: white;
+  padding: 15px 115px;
+  border-radius: 30px;
+  margin-top: 2%;
+  margin-left: 60%;
+  font-size: 20px;
+}
+
+.homeContainer button:hover {
+  color: black;
+  background-color: white;
+  border: 0;
+}
+@font-face {
+  font-family: 'Imperial';
+  src: url('../public/ImperialScript.ttf') format('truetype');
+}
+.shop {
+  background: linear-gradient(309deg, rgb(245, 245, 245) 0%, rgba(238, 220, 255, 0.877) 79%);
+  height: 110vh;
+}
+.shop i {
+  font-style: italic;
+  font-size: 30px;
+}
+.shop h1 {
+  text-align: center;
+  font-weight: 400;
+  font-size: 130px;
+}
+.shopLinks ul li {
+  list-style: none;
+  display: inline-block;
+  margin: 0 100px;
+  color: #000;
+  font-weight: 500;
+  font-size:20px;
+}
+.shopLinks ul li:hover{
+  transform: scale(1.2);
+  transition: transform 0.5s;
+}
+.shop .row {
+  margin-left: 5%;
+}
+.shop .row Link{
+  color:white;
+}
+
+.shop .col-sm-4 {
+  width:  calc(80% / 4);
+  height: 350px;
+  margin: 2%;
+  background-color: #000;
+}
+
+.shop .col-sm-4 h2 {
+  text-align: center;
+  text-shadow: #000;
+  margin-top:-90%;
+  font-family: Georgia;
+  text-shadow: 18px 12px 5px #000;
+  font-size:42px;
+}
+.shop img{
+  width:100%;
+  height:100%;
+ 
+}
+.shop .col-sm-4:hover{
+  filter: grayscale(1);
+  cursor:pointer;
+  transform: scale(1.1);
+  transition: transform 0.5s;
+}
+.shop button.btn-dark{
+  background-color: #000;
+  color:white;
+}
+.shop button.btn-dark:hover {
+ background-color: white;
+ color:#000;
+  transform: scale(1.1);
+}
+:root {
+  --blue: #29189b;
+  --white: #fff;
+  --gray: #f5f5f5;
+  --black1: #222;
+  --black2: #121212;
+}
+.nav {
+  position: fixed;
+  width: 300px;
+  height: 100vh;
+  background: var(--blue);
+  transition: 0.5s;
+}
+.nav ul {
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.nav ul li {
+  position: relative;
+  width: 100%;
+  list-style: none;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+.nav ul li:hover {
+  background-color: var(--white);
+}
+.nav ul li:nth-child(1) {
+  margin-bottom: 40px;
+  pointer-events: none;
+}
+.nav ul li a {
+  width: 100%;
+  display: flex;
+  text-decoration: none;
+  color: var(--white);
+}
+.nav ul li:hover a {
+  color: var(--blue);
+}
+.nav ul li .icon {
+  min-width: 60px;
+  height: 60px;
+  line-height: 75px;
+  text-align: center;
+}
+.nav ul li  .icon ion-icon {
+  font-size: 1.75rem;
+}
+
+.nav ul li a .title {
+  padding: 0 10px;
+  height: 60px;
+  line-height: 60px;
+}
+
+.nav ul li:hover a::before,
+.nav ul li.hovered a::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -50px;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 50%;
+  box-shadow: 35px 35px 0 10px var(--white);
+  pointer-events: none;
+}
+.nav ul li:hover a::after,
+.nav ul li.hovered a::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -50px;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 50%;
+  box-shadow: 35px -35px 0 10px var(--white);
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.main .topbar {
+  position: fixed;
+  width: 80%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  background-color: var(--white);
+  left: 300px;
+}
+.main .toggle {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+.search {
+  width: 400px;
+  margin: 0 10px;
+}
+
+.search label {
+  position: relative;
+  width: 100%;
+}
+
+.search label input {
+  width: 100%;
+  height: 40px;
+  border-radius: 40px;
+  padding: 5px 20px;
+  padding-left: 35px;
+  font-size: 18px;
+  outline: none;
+  border: 1px solid var(--black2);
+}
+
+.search label ion-icon {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  font-size: 1.2rem;
+}
+
+.user {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.user img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.cardBox {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 30px;
+}
+
+.cardBox .card {
+  position: relative;
+  background: var(--white);
+  padding: 30px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+}
+
+.cardBox .card .numbers {
+  position: relative;
+  font-weight: 500;
+  font-size: 2.5rem;
+  color: var(--blue);
+}
+
+.cardBox .card .cardName {
+  color: var(--black2);
+  font-size: 1.1rem;
+  margin-top: 5px;
+}
+
+.cardBox .card .iconBx {
+  font-size: 3.5rem;
+  color: var(--black2);
+}
+
+.cardBox .card:hover {
+  background: var(--blue);
+}
+.cardBox .card:hover .numbers,
+.cardBox .card:hover .cardName,
+.cardBox .card:hover .iconBx {
+  color: var(--white);
+}
+.details {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 30px;
+}
+
+.details .orders {
+  position: relative;
+  display: grid;
+  min-height: 500px;
+  background: var(--white);
+  padding: 20px;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+}
+
+.details .cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.cardHeader h2 {
+  font-weight: 600;
+  color: var(--blue);
+}
+.cardHeader .btn {
+  position: relative;
+  padding: 5px 10px;
+  background: var(--blue);
+  text-decoration: none;
+  color: var(--white);
+  border-radius: 6px;
+}
+
+.details table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top:-25%;
+}
+.details table thead td {
+  font-weight: 600;
+}
+.details .orders table tr {
+  color: var(--black1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.details .orders table tr:last-child {
+  border-bottom: none;
+}
+.details .orders table tbody tr:hover {
+  background: var(--blue);
+  color: var(--white);
+}
+.details .orders table tr td {
+  padding: 10px;
+}
+.customers {
+  position: relative;
+  display: grid;
+  min-height: 500px;
+  padding: 20px;
+  background: var(--white);
+  box-shadow: 0 7px 25px #00000014;
+  border-radius: 20px;
+  
+}
+.customers .image {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  overflow: hidden;
+}
+.customers .image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.customers table tr td {
+  padding: 12px 10px;
+}
+.customers table tr td h4 {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.2rem;
+}
+
+.customers table tr:hover {
+  background: var(--blue);
+  color: var(--white);
+}
+
+@media (max-width: 991px) {
+  .navigation {
+    left: -300px;
+  }
+  .navigation.active {
+    width: 300px;
+    left: 0;
+  }
+  .main {
+    width: 100%;
+    left: 0;
+  }
+  .main.active {
+    left: 300px;
+  }
+  .cardBox {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+@media (max-width: 768px) {
+  .details {
+    grid-template-columns: 1fr;
+  }
+  .recentOrders {
+    overflow-x: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .cardBox {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .cardHeader h2 {
+    font-size: 20px;
+  }
+  .user {
+    min-width: 40px;
+  }
+  .navigation {
+    width: 100%;
+    left: -100%;
+    z-index: 1000;
+  }
+  .navigation.active {
+    width: 100%;
+    left: 0;
+  }
+  .toggle {
+    z-index: 10001;
+  }
+  .main.active .toggle {
+    color: #fff;
+    position: fixed;
+    right: 0;
+    left: initial;
+  }
+}
+
+form{
+  background-color: #29189b;
+  color: white;
+  width:500px;
+  margin-left: 40%;
+  padding: 2%;
+  height: 70vh;
+  border-radius: 10px;
+  box-shadow:12px 12px 10px #bdbdbd;
+}
+form label{
+  padding:2%;
+}
+form button{
+  float:right;
+  margin-top: 2%;
+}
+.table{
+  margin-left:25%;
+}
+.category form {
+  text-align: left;
+  border: 2px ;
+  padding: 2%;
+  border-radius: 10px;
+  height:50vh;
+}
+.category {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.category form label {
+  padding: 1.5%;
+  font-size:20px;
+  font-weight:700;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.category button {
+  margin-top: 2%;
+  padding:7px 15px;
+  font-size:20px;
+}
+.category form .btn2 {
+  float: right;
+  margin-top: 2%;
 }
